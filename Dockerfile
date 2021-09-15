@@ -8,6 +8,7 @@ RUN apt upgrade -y
 RUN apt install vim -y
 RUN apt-get install -y apache2
 RUN service apache2 start
+RUN apt-get install curl -y
 COPY hospital-web /var/www/html
 
 
@@ -55,7 +56,7 @@ COPY manage.py  /usr/src/app/
 
 
 # tell the port number the container should expose
-EXPOSE 8000
+EXPOSE 8000 8100
 
 # run the application
 # RUN pwd
