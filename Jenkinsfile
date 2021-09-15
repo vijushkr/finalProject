@@ -2,7 +2,7 @@ pipeline {
     agent any 
     environment {
         //once you sign up for Docker hub, use that user_id here
-        registry = "vijaydish/webapp3"
+        registry = "vijaydish/finalweb"
         //- update your credentials ID after creating credentials for connecting to Docker Hub
         registryCredential = 'dockerhub_id'
         dockerImage = ''
@@ -48,7 +48,7 @@ pipeline {
     stage('Docker Run') {
      steps{
          script {
-            dockerImage.run("-p 8096:5000 --rm --name mywebappContainer")
+            dockerImage.run("-p 8000:80 -p 8100:8000 --rm --name mywebappContainer")
          }
       }
     }
