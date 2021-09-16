@@ -56,7 +56,7 @@ COPY manage.py  /usr/src/app/
 
 
 # tell the port number the container should expose
-EXPOSE 8000 8100
+EXPOSE 8000 8100 80
 
 # run the application
 # RUN pwd
